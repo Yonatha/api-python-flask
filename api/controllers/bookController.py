@@ -14,5 +14,5 @@ books_db = [
 
 @app.route('/')
 def get():
-    patients = db.query(Patient.name).all()
+    patients = db.query(Patient.name).limit(5).all()
     return jsonify({'patients': [dict(patient) for patient in patients]})
